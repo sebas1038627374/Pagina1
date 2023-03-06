@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Te amo Bichota</title>
+	<style>
+		body {
+			background-color: #e6ccff;
+		}
+
+		h1 {
+			font-family: "Segoe Script", cursive;
+			font-size: 3em;
+			text-align: center;
+			margin-top: 50px;
+		}
+		#mainButton {
+			background-color: #ff99cc;
+			color: #fff;
+			font-weight: bold;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 20px;
+			cursor: pointer;
+			transition: background-color 0.3s, color 0.3s;
+			display: block;
+			margin: 0 auto;
+			text-align: center;
+		}
+		#mainButton:hover {
+			background-color: #99ccff;
+			color: #000;
+		}
+		.secondaryButton {
+			background-color: #fff;
+			color: #ff99cc;
+			font-weight: bold;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 20px;
+			cursor: pointer;
+			transition: background-color 0.3s, color 0.3s;
+			display: block;
+			margin: 20px auto 0;
+			text-align: center;
+		}
+		.secondaryButton:hover {
+			background-color: #ff99cc;
+			color: #fff;
+		}
+	</style>	
+</head>
+<body>
+
+	<h1>Te amo Bichota</h1>
+	<button id="mainButton" onclick="myFunction()">Haz clic aquí</button>
+
+	<script>
+	
+	var count = 0;
+function myFunction() {
+	count++;
+	if (count % 2 == 1) {
+		var x = document.createElement("DIV");
+		x.setAttribute("id", "secondaryButtons");
+		document.body.appendChild(x);
+
+		var songButton = document.createElement("BUTTON");
+		songButton.setAttribute("class", "secondaryButton");
+		songButton.innerHTML = "Song";
+        songButton.onclick = function() {
+            window.location.href = "https://www.youtube.com/watch?v=5-YPOGXI3yE";
+        }
+		x.appendChild(songButton);	
+
+		var poemButton = document.createElement("BUTTON");
+		poemButton.setAttribute("class", "secondaryButton");
+		poemButton.innerHTML = "Poema";
+		poemButton.onclick = function() {
+            window.location.href = "/poema1";
+        }
+		x.appendChild(poemButton);
+	} else {
+		var x = document.getElementById("secondaryButtons");
+		x.remove();
+	}
+}
+
+	</script>
+
+</body>
+</html>
